@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LabWork3</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .top, .bottom {
+            width: 100%;
+            height: 70px;
+            background-color: #e9e4db;
+            text-align: left;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+        }
+
+        .left, .right {
+            position: absolute;
+            top: 70px;
+            width: 20%;
+            background-color: #d2cabb;
+        }
+
+        .left {
+            left: 0;
+            height: calc(100vh - 140px);
+            flex-grow: 1;
+            min-height: calc(100vh - 90%);
+        }
+
+        .right {
+            right: 0;
+            height: calc(100vh - 140px);
+            text-align: right;
+            padding-right: 20px;
+            top: 140px;
+            bottom: 100%;
+            flex-grow: 1;
+        }
+
+        .main {
+            position: relative;
+            top: 70px;
+            margin-bottom: 140px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20%;
+            flex-grow: 1;
+        }
+
+        .sec1, .sec3 {
+            background-color: #b2a58f;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .sec3{
+            margin-right: 25%;
+        }
+
+        .sec2 {
+            flex-grow: 1;
+            background-color: #9e9079;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            margin-right: 25%;
+        }
+
+        .bottom {
+            top: calc(100vh - 70px);
+            background-color: #c0b5a2;
+            text-align: right;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            word-wrap: break-word;
+            font-size: 12px;
+            color: rgb(60, 42, 10);
+            white-space: normal;
+        }
+
+        h1 {
+            text-align: left;
+        }
+
+        h2 {
+            text-align: right;
+            width: 300px;
+        }
+
+        h5 {
+            text-align: left;
+            width: 300px;
+        }
+
+        h4 {
+            text-align: right;
+        }
+
+        h3 {
+            text-align: right;
+            width: 50%;
+            max-width: 100%;
+            word-wrap: break-word; 
+            margin: auto auto; 
+        }
+
+        h6 {
+            text-align: right;
+            width: 80%;
+            max-width: 100%;
+            word-wrap: break-word; 
+            margin: 30px auto; 
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                min-height: 100vh;   
+            }
+
+            .left, .right, .main, .top, .bottom{
+                position: relative;
+                height: auto;
+                top: auto;
+                left: auto;
+                right: auto;
+            }
+
+            .left, .main{
+                width: 100%;
+                margin: 0;
+            }
+
+            .sec2, .sec3 {
+                margin: 0;
+                padding: 10px;
+            }
+
+            h2, h3, h4, h5, h6 {
+                width: 100%;
+                text-align: center; 
+                font-size: 14px;   
+            }
+
+            .top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+                gap: 5px;
+            }
+
+            .top h1, .top h2 {
+                width: 100%;
+                margin: 0;
+            }
+
+            .top h2 {
+                max-width: 90%;
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            .left {
+                width: 100%;
+                height: auto;
+                flex-shrink: 0;
+                height: 10%;
+                width: 100%;
+                flex: none;
+            }
+
+            .right {
+                display: none;
+            }
+
+            .sec1 {
+                flex-shrink: 0;
+            }
+
+            .sec2 {
+                flex: 1;         
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .sec3 {
+                flex-shrink: 0;  
+                padding: 10px;
+            }
+
+            .bottom {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+                background-color: #c0b5a2;
+                gap: 5px;
+            }
+
+            h4, h5 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="top">
+        <h1>Header</h1>
+        <h2>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+        </div>
+
+        <div class="left"></div>
+
+        <div class="main">
+            <section class="sec1">Banner</section>
+
+            <section class="sec2">
+                <h3>Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+            </section>
+            
+            <section class="sec3">LowContent</section>
+        </div>
+
+        <div class="right">
+            <h6>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6> 
+        </div>
+
+        <div class="bottom">
+            <h5>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+            <h4>Footer</h4>
+        </div>
+
+    </div>
+
+  </body>
+</html>
+
